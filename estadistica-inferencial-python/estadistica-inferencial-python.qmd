@@ -1,0 +1,9 @@
+---
+title: "Estadística Inferencial para Data Science e Inteligencia Artificial"
+---
+
+# Fundamentos de estadística inferencial
+
+# Estadísticos y cálculos
+
+# Pruebas de hipótesis y validación
