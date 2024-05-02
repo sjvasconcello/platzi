@@ -1,0 +1,27 @@
+---
+title: "."
+---
+
+## Practica SQL
+
+```{r}
+install.packages("tidyverse")
+```
+
+```{r}
+library(odbc) # provides drivers to connect to different SQL dialects
+library(DBI)  # provides functions to interact with the database
+library(RPostgres)
+library(tidyverse) # for data manipulation
+```
+
+```{r}
+# Replace these values with your actual database credentials
+ postgresql_con2 <- dbConnect(RPostgres::Postgres(),
+  dbname = "pratica_sql",
+  user = "postgres",
+  password = "postgres",
+  host = "127.0.0.1",
+  port = 5433  # The default PostgreSQL port is 5432
+)
+```

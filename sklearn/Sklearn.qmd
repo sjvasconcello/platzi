@@ -1,0 +1,33 @@
+---
+title: "Curso Profesional de Machine Learning con scikit-learn"
+---
+
+Scikit-Learn es una biblioteca de Python que ofrece un conjunto de algoritmos eficientes que pueden ser utilizados para realizar Machine Learning en un ambiente productivo. Con el Curso Profesional de Machine Learning con SciKit-Learn de Platzi aprenderás a implementar los principales algoritmos disponibles en esta biblioteca.
+
+# Conceptos clave
+
+## Todo lo que aprenderás sobre MA con Scikit-Learn
+- Scikit-learn comienza su historia en 2007 por David Cournapeau como un proyecto del Google Summer of code
+- Matthieu Bruncher continúa como parte de su tesis
+
+# Iniciar un proyecto con sklearn
+
+```{bash}
+python3 -m venv env
+```
+
+```{python}
+print("Hello")
+```
+
+# Optimización de features
+
+# Regresiones robustas
+
+# Métodos de ensamble aplicados a clasificación
+
+# Clustering
+
+# Optimización paramétrica
+
+# Salida a producción
