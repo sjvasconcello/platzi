@@ -17,11 +17,21 @@ library(tidyverse) # for data manipulation
 
 ```{r}
 # Replace these values with your actual database credentials
- postgresql_con2 <- dbConnect(RPostgres::Postgres(),
+con <- dbConnect(RPostgres::Postgres(),
   dbname = "pratica_sql",
   user = "postgres",
   password = "postgres",
   host = "127.0.0.1",
   port = 5433  # The default PostgreSQL port is 5432
 )
+```
+
+```{r}
+dbGetQuery(con,
+           "SELECT nombre, apellido, email FROM platzi.alumnos
+           LIMIT 5;")
+```
+
+```{sql, connection=con}
+SELECT nombre, apellido, email FROM platzi.alumnos LIMIT 5;
 ```

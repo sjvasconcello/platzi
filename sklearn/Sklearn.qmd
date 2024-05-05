@@ -20,6 +20,15 @@ python3 -m venv env
 print("Hello")
 ```
 
+
+```{python}
+import psycopg2
+conn = psycopg2.connect(database = "pratical_sql", 
+                        user = "portgres", 
+                        host= 'localhost',
+                        password = "postgres",
+                        port = 5433)
+```
 # Optimización de features
 
 # Regresiones robustas
