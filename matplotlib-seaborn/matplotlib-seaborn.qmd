@@ -740,6 +740,93 @@ sns.relplot(
 
 ## Joinplot y Pairplot
 
+```{python}
+sns.jointplot(
+    data=tips,
+    x='total_bill',
+    y='tip',
+    hue='sex'
+)
+```
+
+```{python}
+sns.jointplot(
+    data=tips,
+    x='total_bill',
+    y='tip',
+    hue='sex',
+    kind='hist',
+    marginal_ticks=True
+)
+```
+
+
+```{python}
+sns.jointplot(
+    data=tips,
+    x='total_bill',
+    y='tip',
+    hue='sex',
+    kind='kde'
+)
+```
+
+```{python}
+sns.jointplot(
+    data=tips,
+    x='total_bill',
+    y='tip',
+    hue='sex',
+    kind='hist',
+    marginal_ticks=True,
+    marginal_kws=dict(bins=25, fill=False, multiple='dodge'),
+)
+```
+
+```{python}
+sns.pairplot(
+    data=tips,
+    hue='sex',
+    palette='dark',
+    corner=True,
+    kind='scatter'
+)
+plt.show()
+```
+
 
 ## Heatmap
 
+
+```{python}
+tips.corr()
+```
+
+
+```{python}
+sns.heatmap(
+    tips.corr(),
+    annot=True,
+    cmap='coolwarm_r',
+    linewidths=1,
+    #linecolor='black',
+    vmin=-1, 
+    vmax=1,
+    #cbar=True
+)
+plt.show()
+```
+
+
+
+
+```{python}
+mask = np.triu(np.ones_like(tips.corr()))
+sns.heatmap(
+    tips.corr(),
+    annot=True,
+    cmap='YlGnBu',
+    mask=mask
+)
+plt.show()
+```
