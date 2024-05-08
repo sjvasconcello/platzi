@@ -1,0 +1,73 @@
+---
+title: "Docker-fundamentos"
+format:
+  html:
+    toc: true
+---
+
+# Curso de Docker: Fundamentos
+
+## Fundamentos de Docker
+
+**Docker**: Es una herramienta que te permite crear, gestionar y publicar contenedores  
+
+### Diferencias entre Máquina virtuales, contenedores y servicios
+- **Maquinas virtuales**: 
+  - Aislamiento: Las VMs proporcionan un aislamiento completo, ya que ejecutan un sistema operativo completo independiente del host.
+  - Recurso Intensivo: Las VMs pueden consumir más recursos, porque cada una tiene su propio sistema operativo y una cantidad significativa de recursos dedicados.
+  - Arranque Más Lento: El arranque de una VM es más lento, puesto que implica iniciar un sistema operativo completo.
+  - Hypervisor: Las VMs se ejecutan en un hipervisor, que gestiona y asigna recursos para cada máquina virtual.
+  
+- **Contenedores**: Son como habitaciones en una casa compartida. Comparten algunas instalaciones comunes, lo que los hace más ligeros y rápidos, pero tienen menos aislamiento que los apartamentos (VMs).
+  - Aislamiento Ligero: Los contenedores comparten el mismo kernel del sistema operativo del host, lo que proporciona un aislamiento más ligero.
+  - Eficiencia de Recursos: Los contenedores son más eficientes en términos de recursos, ya que comparten el mismo sistema operativo y solo incluyen las bibliotecas y dependencias necesarias.
+  - Arranque Rápido: Los contenedores tienen un arranque rápido, por el hecho de que no requieren iniciar un sistema operativo completo.
+  - Docker, Containerd, etc.: Docker es una de las tecnologías de contenedores más populares, y otras implementaciones incluyen containerd, rkt, etc.
+
+Para poder revisar la funcion de Docker en terminal usamos el comando
+
+```bash
+docker --version
+```
+
+- Secciónes
+  - Contenedores
+  - Images
+    - Locales
+    - Remotas (Hub)
+    - Artefactos (Artifactory)
+  - Dev environments
+  - Docker Scout
+  - Volumenes
+
+```bash
+# Este comando sirve para saber la información del uso de hardware
+docker info
+
+# Nos da una lista de las imagenes creadas
+docker images
+
+# Nos da una lista de los contenedores
+docker ps
+
+# Podemos agregar --help para que nos de la documentación
+docker ps --help
+
+# Sirve para construir una imagen
+docker build
+
+# Para correr una imagen usamos
+docker run
+```
+
+## Creación de Imágenes con Docker
+
+
+## Volúmenes y Redes de Docker
+
+
+## Publicando Imágenes de Docker
+
+
+## Orquestación de Contenedores de Docker
+
