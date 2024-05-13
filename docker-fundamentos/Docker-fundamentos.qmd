@@ -59,9 +59,39 @@ docker build
 # Para correr una imagen usamos
 docker run
 ```
+### Conociendo Docker CLI
+
+```bash
+# como saber la version de docker
+docker --version
+
+# documentación de docker
+docker
+
+# Saber toda la información de cuantos recursos usa
+docker --info
+
+# Ver todas las imagenes que he creado en dockers
+docker images
+
+# Para ver los contenedores de docker
+docker ps
+
+# documentación de los comandos en espesifico 
+docker images --help
+
+# Construir una imagen a partir de un Dockerfile
+docker build -t <nombre_de_la_imagen>
+
+```
+
+
 
 ## Creación de Imágenes con Docker
-
+### Mi primera imagen de Docker
+- Tu tienes una imagen en el archivo Dockerfile
+- Despues le generas una imagen usando `docker build`
+- Ya creada la image levantas el contenedor usando `docker run`
 
 ## Volúmenes y Redes de Docker
 
