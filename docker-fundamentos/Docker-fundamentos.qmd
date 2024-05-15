@@ -93,7 +93,104 @@ docker build -t <nombre_de_la_imagen>
 - Despues le generas una imagen usando `docker build`
 - Ya creada la image levantas el contenedor usando `docker run`
 
+```bash
+# Iniciar Dockerfile desde la carpeta de origen
+docker build .
+
+# Eliminar una imagen con su numero ID
+docker rmi -f <IMAGE ID>
+
+# Hacer un build y darle un nombre
+docker build -t <nombre_de_la_imagen>:<nombre_del_tag> .
+```
+
+```bash
+# Revisar si existe mi imagen en docker images
+docker images
+
+# Reviso si esta el contenedor
+docker ps
+
+# Correr el contenedor
+docker run -it --rm -d -p 8080:80 --name <nombre_contenedor> <nombre_imagen>
+```
+- `-it`: Significa interactivo, por lo que sirve para ver la terminal de mi proyect
+- `--rm`: Sirve para eliminar cualquier version del contenedor existente
+- `-d`: Funcionamiento en segundo plano
+-  `-p`: Parametro de puerto <puerto por el que entro a la aplicacion>:<puerto de comunicación>
+-  `--name`: Dar nombre al contenedor
+
+### Administración de imagenes
+
+```bash
+# Buscar una imagen en espesifico
+docker images <nombre_imagen>
+
+# filtrar imagenes
+docker images --filter=reference='*:1.0'
+
+# Actualizar un tag
+docker images tag <nombre_imagen>:<nombre_tag> <nombre_imagen>:<nombre_tag>
+
+# Eliminar imagenes
+docker rmi <nombre_imagen>:<nombre_tag>
+docker rmi <ID_IMAGES>
+
+# Eliminación forzada
+docker rmi -f <ID_IMAGES>
+
+```
+- No podemos eliminar una imagen que esta siendo ejecutada por un contenedor
+
+### Administración de contenedores
+
+```bash
+# Lista completa de los contenedores
+docker ps -a
+
+# Ver el tamaño
+docker ps --size
+
+# Detener un contenedor
+docker stop <CONTAINER ID>
+
+# Ver rendimiento de Docker
+docker stats
+```
+- No puedes tener 2 contenedores con el mismo nombre
+
 ## Volúmenes y Redes de Docker
+
+### Volúmenes 
+
+- Espacios compartidos entre el espacio local y docker
+  - Es como si fuera una carpeta compartida
+  - En ciencia de datos son importantes porque vas introduciendo cada vez mas datos
+
+```bash
+# Correr el contenedor
+docker run -it --rm -d -p 8080:80 -v <carpeta_local>:<carpeta_en_el_contenedor> --name <nombre_contenedor> <nombre_imagen>
+```
+
+```dockerfile
+# crear Volumen
+VOLUME ["ruta/local","ruta/contenedor"]
+```
+
+### Redes
+
+```bash
+# ver las network de docker
+docker network ls
+
+# crear una red
+docker network create <nombre_de_la_red>
+```
+- Categorias de redes
+  - Bridge: por defecto
+  - Host: coneccion exclusiva
+  - none: sin coneccion
+  - red_virtual:
 
 
 ## Publicando Imágenes de Docker
